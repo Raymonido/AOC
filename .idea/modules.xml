@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Day2pt1.iml" filepath="$PROJECT_DIR$/Day2pt1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/AOC.iml" filepath="$PROJECT_DIR$/.idea/AOC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day1pt1/Day1pt1.iml" filepath="$PROJECT_DIR$/Day1pt1/Day1pt1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day1pt2/Day1pt2.iml" filepath="$PROJECT_DIR$/Day1pt2/Day1pt2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day2pt1/Day2pt1.iml" filepath="$PROJECT_DIR$/Day2pt1/Day2pt1.iml" />
     </modules>
   </component>
 </project>
