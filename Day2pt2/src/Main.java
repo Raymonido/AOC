@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 
@@ -21,11 +22,11 @@ public class Main {
             lineNumbers.add(row);
         }
         int safe = 0;
-        for (List<Integer> lineNumber : lineNumbers) {
+        for (List<Integer>  lineNumber : lineNumbers) {
             if (isValidLine(lineNumber)) {
                 safe++;
-            } else {
-                System.out.println(lineNumber + "Ist nicht gut!");
+            } else if (canBeSafeByRemovingOne(lineNumber)){
+                safe++;
             }
         }
 
@@ -34,7 +35,8 @@ public class Main {
     public static boolean isValidLine(List<Integer> line) {
         boolean isDescending = true;
         boolean isAscending = true ;
-        for (int i = 0; i < line.size()-1; i++) {
+
+        for (int i = 0; i < line.size() - 1; i++) {
             int diff = line.get(i + 1) - line.get(i);
             if (Math.abs(diff) > 3 || diff == 0) {
                 return false;
@@ -47,5 +49,16 @@ public class Main {
             }
         }
         return isAscending || isDescending;
+    }
+    public static boolean canBeSafeByRemovingOne(List<Integer> line) {
+        for (int i = 0; i < line.size(); i++) {
+            List<Integer> modifiedLine = new ArrayList<>(line);
+            modifiedLine.remove(i);
+            if (isValidLine(modifiedLine)) {
+                return true;
+            }
+
+        }
+       return false;
     }
 }
